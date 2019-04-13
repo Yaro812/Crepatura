@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Crepatura
+
+  Created by Yaroslav Pasternak on 14/04/2019.
+  Copyright © 2019 Thorax. All rights reserved.
+*/
+
+"Add" = "Добавить";
+"Delete All" = "Удалить все";
+"Add Workout session" = "Добавить тренировку";

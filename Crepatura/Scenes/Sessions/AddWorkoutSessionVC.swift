@@ -42,7 +42,7 @@ final class AddWorkoutSessionVC: UIViewController, CoreDataUsing {
         view.addSubview(dateTextField)
 
         addButton.setTitleColor(.blue, for: .normal)
-        addButton.setTitle("Add Workout session", for: .normal)
+        addButton.setTitle("Add Workout session".localized, for: .normal)
         addButton.addTarget(self, action: #selector(tapAddWorkout), for: .touchUpInside)
         view.addSubview(addButton)
 

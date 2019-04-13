@@ -36,11 +36,11 @@ final class WorkoutSessionsVC: UIViewController, CoreDataUsing {
     }
 
     func setupNavigationItem() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Delete All",
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Delete All".localized,
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(tapRemoveAll))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add".localized,
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(tapAdd))
