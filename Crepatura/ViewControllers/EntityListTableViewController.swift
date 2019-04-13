@@ -13,9 +13,14 @@ class EntityListTableViewController<T: NSManagedObject>: UITableViewController, 
     var coreData: CoreDataService
     var observer: EntityObserver<T>!
 
+    var onSelected: (T) -> Void = { _ in }
+
     required init(coreData: CoreDataService) {
         self.coreData = coreData
         super.init(nibName: nil, bundle: nil)
+        loadViewIfNeeded()
+        observer = EntityObserver(coreData: coreData)
+        observer.observeFor(tableView: tableView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,11 +35,6 @@ class EntityListTableViewController<T: NSManagedObject>: UITableViewController, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         observer.getItems()
-    }
-
-    func register() {
-        observer = EntityObserver(coreData: coreData)
-        observer.observeFor(tableView: tableView)
     }
 
     // MARK: UITableViewDataSource
@@ -54,5 +54,10 @@ class EntityListTableViewController<T: NSManagedObject>: UITableViewController, 
         cell.textLabel?.text = model.sessionTypes?.first?.name ?? "Workout"
         cell.detailTextLabel?.text = "\(model.date)"
         }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onSelected(observer[indexPath])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

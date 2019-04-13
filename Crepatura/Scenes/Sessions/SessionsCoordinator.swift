@@ -32,4 +32,8 @@ class SessionsCoordinator: Coordinator {
     func workoutSessionAdded(sender: UIViewController) {
         sender.dismiss(animated: true, completion: nil)
     }
+
+    func selected(workoutSession: WorkoutSession) {
+        print("Workout session selected: \(workoutSession.id)")
+    }
 }

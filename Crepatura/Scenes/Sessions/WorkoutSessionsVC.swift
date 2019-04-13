@@ -31,7 +31,6 @@ final class WorkoutSessionsVC: UIViewController, CoreDataUsing {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sessionsViewController.register()
         setupNavigationItem()
         setupView()
     }
@@ -49,6 +48,9 @@ final class WorkoutSessionsVC: UIViewController, CoreDataUsing {
 
     func setupView() {
         sessionsViewController.attach(to: self, in: view)
+        sessionsViewController.onSelected = { [weak self] workoutSession in
+            self?.coordinator.selected(workoutSession: workoutSession)
+        }
     }
 
     @objc
