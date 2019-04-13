@@ -12,18 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coreData: CoreDataService!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let coreData = CoreDataService()
-        self.coreData = coreData
+    var coordinator: MainCoordinator = MainCoordinator()
+
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = coordinator.window
+        coordinator.start()
         return true
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-       coreData?.saveContext()
+       coordinator.willTerminate()
     }
-
 
 }
 

@@ -10,7 +10,8 @@ import CoreData
 import UIKit
 
 class EntityListTableViewController<T: NSManagedObject>: UITableViewController, CoreDataUsing {
-    static func create<T: NSManagedObject>(for type:T.Type, with coreData: CoreDataService) -> EntityListTableViewController<T> {
+    static func create<T: NSManagedObject>(for type:T.Type,
+                                           with coreData: CoreDataService) -> EntityListTableViewController<T> {
         let vc = EntityListTableViewController<T>()
         vc.loadViewIfNeeded()
         vc.register(coreData: coreData)

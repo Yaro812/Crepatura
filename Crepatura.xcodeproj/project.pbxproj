@@ -17,7 +17,6 @@
 		6D076F442230797D00C5564B /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D076F432230797D00C5564B /* Workout.swift */; };
 		6D076F4622307B2700C5564B /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D076F4522307B2700C5564B /* SessionType.swift */; };
 		6D076F4822307C6000C5564B /* CoreDataUsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D076F4722307C6000C5564B /* CoreDataUsing.swift */; };
-		6D076F4B22307D0E00C5564B /* WorkoutSessionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D076F4A22307D0E00C5564B /* WorkoutSessionsVC.swift */; };
 		6D076F4D2230822A00C5564B /* AddWorkoutSessionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D076F4C2230822A00C5564B /* AddWorkoutSessionVC.swift */; };
 		6D6258CE22623BF300D8DDD0 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258CD22623BF300D8DDD0 /* WorkoutSession.swift */; };
 		6D6258D022623D9900D8DDD0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258CF22623D9900D8DDD0 /* Exercise.swift */; };
@@ -30,6 +29,10 @@
 		6D6258E0226288B400D8DDD0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258DF226288B400D8DDD0 /* Coordinator.swift */; };
 		6D6258E32262892600D8DDD0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258E22262892600D8DDD0 /* CellModel.swift */; };
 		6D6258E5226289EA00D8DDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258E4226289EA00D8DDD0 /* ViewController.swift */; };
+		6D6258EA22628EA900D8DDD0 /* WorkoutSessionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258E922628EA900D8DDD0 /* WorkoutSessionsVC.swift */; };
+		6DA8A6DD22628F6A00AC2540 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8A6DC22628F6A00AC2540 /* MainCoordinator.swift */; };
+		6DA8A6DF226291D300AC2540 /* SessionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8A6DE226291D300AC2540 /* SessionsCoordinator.swift */; };
+		6DA8A6E1226292D800AC2540 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8A6E0226292D800AC2540 /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +48,6 @@
 		6D076F432230797D00C5564B /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		6D076F4522307B2700C5564B /* SessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionType.swift; sourceTree = "<group>"; };
 		6D076F4722307C6000C5564B /* CoreDataUsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUsing.swift; sourceTree = "<group>"; };
-		6D076F4A22307D0E00C5564B /* WorkoutSessionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionsVC.swift; sourceTree = "<group>"; };
 		6D076F4C2230822A00C5564B /* AddWorkoutSessionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutSessionVC.swift; sourceTree = "<group>"; };
 		6D6258CD22623BF300D8DDD0 /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
 		6D6258CF22623D9900D8DDD0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -58,6 +60,10 @@
 		6D6258DF226288B400D8DDD0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6D6258E22262892600D8DDD0 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		6D6258E4226289EA00D8DDD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D6258E922628EA900D8DDD0 /* WorkoutSessionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSessionsVC.swift; sourceTree = "<group>"; };
+		6DA8A6DC22628F6A00AC2540 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6DA8A6DE226291D300AC2540 /* SessionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsCoordinator.swift; sourceTree = "<group>"; };
+		6DA8A6E0226292D800AC2540 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		6D076F262230754600C5564B /* Crepatura */ = {
 			isa = PBXGroup;
 			children = (
+				6D6258E822628EA900D8DDD0 /* Scenes */,
 				6D6258D922627AD100D8DDD0 /* Services */,
 				6D076F4922307CE200C5564B /* ViewControllers */,
 				6D076F412230794C00C5564B /* CoreData */,
@@ -111,6 +118,7 @@
 				6D6258DD2262887800D8DDD0 /* Attachable.swift */,
 				6D6258DF226288B400D8DDD0 /* Coordinator.swift */,
 				6D6258E22262892600D8DDD0 /* CellModel.swift */,
+				6DA8A6E0226292D800AC2540 /* Storyboarded.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -141,8 +149,6 @@
 		6D076F4922307CE200C5564B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6D076F4A22307D0E00C5564B /* WorkoutSessionsVC.swift */,
-				6D076F4C2230822A00C5564B /* AddWorkoutSessionVC.swift */,
 				6D6258D72262767600D8DDD0 /* EntityListTableViewController.swift */,
 				6D6258E4226289EA00D8DDD0 /* ViewController.swift */,
 			);
@@ -164,6 +170,25 @@
 				6D6258DB22627B3F00D8DDD0 /* EntitityObserverManager.swift */,
 			);
 			path = EntityObserver;
+			sourceTree = "<group>";
+		};
+		6D6258E822628EA900D8DDD0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6DA8A6DB22628F2900AC2540 /* Sessions */,
+				6DA8A6DC22628F6A00AC2540 /* MainCoordinator.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6DA8A6DB22628F2900AC2540 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				6D6258E922628EA900D8DDD0 /* WorkoutSessionsVC.swift */,
+				6D076F4C2230822A00C5564B /* AddWorkoutSessionVC.swift */,
+				6DA8A6DE226291D300AC2540 /* SessionsCoordinator.swift */,
+			);
+			path = Sessions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,17 +263,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6258D222623EC000D8DDD0 /* TrainingSet.swift in Sources */,
+				6DA8A6DF226291D300AC2540 /* SessionsCoordinator.swift in Sources */,
+				6DA8A6DD22628F6A00AC2540 /* MainCoordinator.swift in Sources */,
 				6D076F402230780A00C5564B /* Entities.xcdatamodeld in Sources */,
-				6D076F4B22307D0E00C5564B /* WorkoutSessionsVC.swift in Sources */,
 				6D6258D82262767600D8DDD0 /* EntityListTableViewController.swift in Sources */,
 				6D076F4622307B2700C5564B /* SessionType.swift in Sources */,
 				6D6258DC22627B3F00D8DDD0 /* EntitityObserverManager.swift in Sources */,
+				6D6258EA22628EA900D8DDD0 /* WorkoutSessionsVC.swift in Sources */,
 				6D076F282230754600C5564B /* AppDelegate.swift in Sources */,
 				6D076F3C2230774F00C5564B /* CoreDataService.swift in Sources */,
 				6D6258E0226288B400D8DDD0 /* Coordinator.swift in Sources */,
 				6D076F3A2230773E00C5564B /* FetchableById.swift in Sources */,
 				6D6258E5226289EA00D8DDD0 /* ViewController.swift in Sources */,
 				6D6258D622626C8F00D8DDD0 /* EntityObserver.swift in Sources */,
+				6DA8A6E1226292D800AC2540 /* Storyboarded.swift in Sources */,
 				6D6258D022623D9900D8DDD0 /* Exercise.swift in Sources */,
 				6D6258D422623F6A00D8DDD0 /* Muscle.swift in Sources */,
 				6D6258DE2262887800D8DDD0 /* Attachable.swift in Sources */,

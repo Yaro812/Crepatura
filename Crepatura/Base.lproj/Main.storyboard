@@ -13,7 +13,7 @@
         <!--Workouts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WorkoutSessionsVC" customModule="Crepatura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutSessionsVC" id="BYZ-38-t0r" customClass="WorkoutSessionsVC" customModule="Crepatura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,6 @@
                     <connections>
                         <outlet property="addButton" destination="oAw-Ol-g6m" id="S9V-WB-rr3"/>
                         <outlet property="tableView" destination="Uhm-S6-3AK" id="OeM-WG-O5R"/>
-                        <segue destination="Riz-25-o97" kind="presentation" identifier="toAddWorkout" id="yB3-4n-5Xh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,7 +101,7 @@
         <!--Add Workout SessionVC-->
         <scene sceneID="mMD-E8-P6k">
             <objects>
-                <viewController id="Riz-25-o97" customClass="AddWorkoutSessionVC" customModule="Crepatura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddWorkoutSessionVC" id="Riz-25-o97" customClass="AddWorkoutSessionVC" customModule="Crepatura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Bx-91-BU5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eD-hW-ddO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="-980"/>
+            <point key="canvasLocation" x="1977" y="-564"/>
         </scene>
     </scenes>
 </document>
