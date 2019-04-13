@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CoreDataUsing {
-    var coreData: CoreDataService! { get set }
+    var coreData: CoreDataService { get }
 }

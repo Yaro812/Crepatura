@@ -20,16 +20,12 @@ class SessionsCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = WorkoutSessionsVC.instantiate()
-        vc.coordinator = self
-        vc.coreData = coreData
+        let vc = WorkoutSessionsVC(coordinator: self, coreData: coreData)
         navigationController.pushViewController(vc, animated: false)
     }
 
     func addWorkoutSession(from parent: UIViewController) {
-        let vc = AddWorkoutSessionVC.instantiate()
-        vc.coreData = coreData
-        vc.coordinator = self
+        let vc = AddWorkoutSessionVC(coordinator: self, coreData: coreData)
         parent.present(vc, animated: true, completion: nil)
     }
 

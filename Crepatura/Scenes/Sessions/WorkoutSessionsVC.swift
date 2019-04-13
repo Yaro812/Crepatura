@@ -9,62 +9,51 @@
 import CoreData
 import UIKit
 
-class WorkoutSessionsVC: UIViewController, CoreDataUsing, Storyboarded {
-    var coordinator: SessionsCoordinator!
-    var coreData: CoreDataService!
-    
-    @IBOutlet var addButton: UIBarButtonItem!
-    @IBOutlet var tableView: UITableView!
+final class WorkoutSessionsVC: UIViewController, CoreDataUsing {
+    let coordinator: SessionsCoordinator
+    let coreData: CoreDataService
+
+    let sessionsViewController: EntityListTableViewController<WorkoutSession>
 
     var observer: EntityObserver<WorkoutSession>!
+
+    required init(coordinator: SessionsCoordinator, coreData: CoreDataService) {
+        self.coordinator = coordinator
+        self.coreData = coreData
+        sessionsViewController = EntityListTableViewController<WorkoutSession>(coreData: coreData)
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        observer = EntityObserver<WorkoutSession>(coreData: coreData)
-        observer.observeFor(tableView: tableView)
-
-        tableView.delegate = self
-        tableView.dataSource = self
+        sessionsViewController.register()
+        setupNavigationItem()
+        setupView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        observer.getItems()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? AddWorkoutSessionVC {
-            vc.coreData = coreData
-        }
+    func setupNavigationItem() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Delete All", style: .plain, target: self, action: #selector(tapRemoveAll))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(tapAdd))
     }
 
-    @IBAction func tapAdd(_ sender: UIBarButtonItem) {
+    func setupView() {
+        sessionsViewController.attach(to: self, in: view)
+    }
+
+    @objc
+   func tapAdd(_ sender: UIBarButtonItem) {
         print("add")
         coordinator.addWorkoutSession(from: self)
     }
 
-    @IBAction func tapRemoveAll(_ sender: Any) {
+    @objc
+    func tapRemoveAll(_ sender: Any) {
         print("clear all WorkoutSessions")
         coreData.removeAll(WorkoutSession.self)
-    }
-}
-
-extension WorkoutSessionsVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return observer.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        return cell
-    }
-}
-
-extension WorkoutSessionsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let model = observer[indexPath]
-        cell.textLabel?.text = model.sessionTypes?.first?.name ?? "Workout"
-        cell.detailTextLabel?.text = "\(model.date)"
     }
 }
