@@ -16,12 +16,12 @@ class Exercise: NSManagedObject, FetchableById {
     @NSManaged public var name: Id
     @NSManaged public var details: String?
 
-    @NSManaged public var muscles: NSSet // of Muscle
-    @NSManaged public var workouts: NSSet // of Workout
+    @NSManaged public var workouts: Set<Workout>
+    @NSManaged public var muscles: Set<Muscle>
 
-    @NSManaged func addWorkoutsObject(workout: NSSet)
-    @NSManaged func removeWorkoutsObject(workout: NSSet)
+    @NSManaged func addWorkoutsObject(_ objects:  Set<Workout>)
+    @NSManaged func removeWorkoutsObject(_ objects:  Set<Workout>)
 
-    @NSManaged func addMusclesObject(muscles: NSSet)
-    @NSManaged func removeMusclessObject(muscles: NSSet)
+    @NSManaged func addMusclesObject(_ objects:  Set<Muscle>)
+    @NSManaged func removeMusclesObject(_ objects:  Set<Muscle>)
 }

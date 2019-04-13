@@ -16,12 +16,12 @@ class WorkoutSession: NSManagedObject, FetchableById {
     @NSManaged public var id: UUID
     @NSManaged public var date: Date
 
-    @NSManaged public var sessionType: SessionType?
-    @NSManaged public var workouts: NSSet // of Workout
+    @NSManaged public var sessionTypes: Set<SessionType>?
+    @NSManaged public var workouts: Set<Workout>?
 
-    @NSManaged func addSessionTypeObject(sessionType: SessionType)
-    @NSManaged func removeSessionTypeObject(sessionType: SessionType)
+    @NSManaged func addSessionTypesObject(_ objects: Set<SessionType>)
+    @NSManaged func removeSessionTypesObject(_ objects: Set<SessionType>)
 
-    @NSManaged func addWorkoutsObject(workouts: NSSet)
-    @NSManaged func removeWorkoutsObject(workouts: NSSet)
+    @NSManaged func addWorkoutsObject(_ objects: Set<Workout>)
+    @NSManaged func removeWorkoutsObject(_ objects: Set<Workout>)
 }

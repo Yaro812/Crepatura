@@ -17,6 +17,8 @@ class SessionType: NSManagedObject, FetchableById {
     @NSManaged public var name: String
     @NSManaged public var details: String?
 
-    @NSManaged func addSessionsObject(sessions: NSSet)
-    @NSManaged func removeSessionsObject(sessions: NSSet)
+    @NSManaged public var sessions: Set<WorkoutSession>
+
+    @NSManaged func addSessionsObject(_ objects: Set<WorkoutSession>)
+    @NSManaged func removeSessionsObject(_ objects: Set<WorkoutSession>)
 }

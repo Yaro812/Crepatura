@@ -15,8 +15,8 @@ class Muscle: NSManagedObject, FetchableById {
 
     @NSManaged public var name: Id
 
-    @NSManaged public var exercises: NSSet // of Exercise
+    @NSManaged public var exercises: Set<Exercise>
 
-    @NSManaged func addExercisesObject(exercises: NSSet)
-    @NSManaged func removeExercisesObject(exercises: NSSet)
+    @NSManaged func addExercisesObject(_ objects: Set<Exercise>)
+    @NSManaged func removeExercisesObject(_ objects: Set<Exercise>)
 }

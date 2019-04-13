@@ -26,6 +26,10 @@
 		6D6258D622626C8F00D8DDD0 /* EntityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258D522626C8F00D8DDD0 /* EntityObserver.swift */; };
 		6D6258D82262767600D8DDD0 /* EntityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258D72262767600D8DDD0 /* EntityListTableViewController.swift */; };
 		6D6258DC22627B3F00D8DDD0 /* EntitityObserverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258DB22627B3F00D8DDD0 /* EntitityObserverManager.swift */; };
+		6D6258DE2262887800D8DDD0 /* Attachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258DD2262887800D8DDD0 /* Attachable.swift */; };
+		6D6258E0226288B400D8DDD0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258DF226288B400D8DDD0 /* Coordinator.swift */; };
+		6D6258E32262892600D8DDD0 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258E22262892600D8DDD0 /* CellModel.swift */; };
+		6D6258E5226289EA00D8DDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6258E4226289EA00D8DDD0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		6D6258D522626C8F00D8DDD0 /* EntityObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityObserver.swift; sourceTree = "<group>"; };
 		6D6258D72262767600D8DDD0 /* EntityListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityListTableViewController.swift; sourceTree = "<group>"; };
 		6D6258DB22627B3F00D8DDD0 /* EntitityObserverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitityObserverManager.swift; sourceTree = "<group>"; };
+		6D6258DD2262887800D8DDD0 /* Attachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachable.swift; sourceTree = "<group>"; };
+		6D6258DF226288B400D8DDD0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6D6258E22262892600D8DDD0 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		6D6258E4226289EA00D8DDD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,9 @@
 			children = (
 				6D076F4722307C6000C5564B /* CoreDataUsing.swift */,
 				6D076F392230773E00C5564B /* FetchableById.swift */,
+				6D6258DD2262887800D8DDD0 /* Attachable.swift */,
+				6D6258DF226288B400D8DDD0 /* Coordinator.swift */,
+				6D6258E22262892600D8DDD0 /* CellModel.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 				6D076F4A22307D0E00C5564B /* WorkoutSessionsVC.swift */,
 				6D076F4C2230822A00C5564B /* AddWorkoutSessionVC.swift */,
 				6D6258D72262767600D8DDD0 /* EntityListTableViewController.swift */,
+				6D6258E4226289EA00D8DDD0 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,13 +245,17 @@
 				6D6258DC22627B3F00D8DDD0 /* EntitityObserverManager.swift in Sources */,
 				6D076F282230754600C5564B /* AppDelegate.swift in Sources */,
 				6D076F3C2230774F00C5564B /* CoreDataService.swift in Sources */,
+				6D6258E0226288B400D8DDD0 /* Coordinator.swift in Sources */,
 				6D076F3A2230773E00C5564B /* FetchableById.swift in Sources */,
+				6D6258E5226289EA00D8DDD0 /* ViewController.swift in Sources */,
 				6D6258D622626C8F00D8DDD0 /* EntityObserver.swift in Sources */,
 				6D6258D022623D9900D8DDD0 /* Exercise.swift in Sources */,
 				6D6258D422623F6A00D8DDD0 /* Muscle.swift in Sources */,
+				6D6258DE2262887800D8DDD0 /* Attachable.swift in Sources */,
 				6D6258CE22623BF300D8DDD0 /* WorkoutSession.swift in Sources */,
 				6D076F4D2230822A00C5564B /* AddWorkoutSessionVC.swift in Sources */,
 				6D076F442230797D00C5564B /* Workout.swift in Sources */,
+				6D6258E32262892600D8DDD0 /* CellModel.swift in Sources */,
 				6D076F4822307C6000C5564B /* CoreDataUsing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

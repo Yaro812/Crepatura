@@ -67,7 +67,7 @@ extension WorkoutSessionsVC: UITableViewDataSource {
 extension WorkoutSessionsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let model = observer[indexPath]
-        cell.textLabel?.text = model.sessionType?.name ?? "Workout"
+        cell.textLabel?.text = model.sessionTypes?.first?.name ?? "Workout"
         cell.detailTextLabel?.text = "\(model.date)"
     }
 }

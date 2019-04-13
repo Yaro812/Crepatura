@@ -15,12 +15,16 @@ class Workout: NSManagedObject, FetchableById {
     
     @NSManaged public var id: UUID
 
-    @NSManaged func addExerciseObject(exercise: Exercise)
-    @NSManaged func removeExerciseObject(exercise: Exercise)
+    @NSManaged public var exercise: Exercise
+    @NSManaged public var session: WorkoutSession
+    @NSManaged public var trainingSets: Set<TrainingSet>
 
-    @NSManaged func addSessionObject(session: WorkoutSession)
-    @NSManaged func removeSessionObject(session: WorkoutSession)
+    @NSManaged func addExerciseObject(_ object: Exercise)
+    @NSManaged func removeExerciseObject(_ object: Exercise)
 
-    @NSManaged func addTrainingSetsObject(trainingSets: NSSet)
-    @NSManaged func removeTrainingSetsObject(trainingSets: NSSet)
+    @NSManaged func addSessionObject(_ object: WorkoutSession)
+    @NSManaged func removeSessionObject(_ object: WorkoutSession)
+
+    @NSManaged func addTrainingSetsObject(_ objects: Set<TrainingSet>)
+    @NSManaged func removeTrainingSetsObject(_ objects: Set<TrainingSet>)
 }
