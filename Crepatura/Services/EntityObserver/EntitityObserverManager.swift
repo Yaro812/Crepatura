@@ -55,6 +55,8 @@ extension TableViewEntityManager: NSFetchedResultsControllerDelegate {
             if let newIndexPath = newIndexPath {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+        @unknown default:
+            fatalError("New case available, but not implemented")
         }
     }
 }

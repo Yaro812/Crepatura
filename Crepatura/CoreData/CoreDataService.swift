@@ -25,7 +25,9 @@ class CoreDataService {
 
     init() {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(updatedCoreData), name: .NSManagedObjectContextDidSave, object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(updatedCoreData),
+                                       name: .NSManagedObjectContextDidSave, object: nil)
     }
 
     func performInBackground(block: @escaping (NSManagedObjectContext) -> Void) {
