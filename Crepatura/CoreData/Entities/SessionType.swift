@@ -11,9 +11,8 @@ import Foundation
 
 @objc(SessionType)
 class SessionType: NSManagedObject, FetchableById {
-    typealias Id = UUID
-    
-    @NSManaged public var id: UUID
+    typealias Id = String
+
     @NSManaged public var name: String
     @NSManaged public var details: String?
 

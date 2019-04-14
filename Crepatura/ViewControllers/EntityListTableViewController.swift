@@ -12,14 +12,17 @@ import UIKit
 class EntityListTableViewController<T: NSManagedObject>: UITableViewController, CoreDataUsing, Attachable {
     var coreData: CoreDataService
     var observer: EntityObserver<T>!
+    weak var coordinator: SessionsCoordinator?
+
+    var isAddButtonNeeded = false
 
     var onSelected: (T) -> Void = { _ in }
 
-    required init(coreData: CoreDataService) {
+    required init(coreData: CoreDataService, sortDescriptor: NSSortDescriptor? = nil) {
         self.coreData = coreData
         super.init(nibName: nil, bundle: nil)
         loadViewIfNeeded()
-        observer = EntityObserver(coreData: coreData)
+        observer = EntityObserver(coreData: coreData, sortDescriptor: sortDescriptor)
         observer.observeFor(tableView: tableView)
     }
 
@@ -29,12 +32,20 @@ class EntityListTableViewController<T: NSManagedObject>: UITableViewController, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add".localized, style: .plain, target: self, action: #selector(tapAdd))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         observer.getItems()
+    }
+
+    // MARK: Actions
+
+    @objc
+    private func tapAdd() {
+        coordinator?.addEntityRequested(from: self)
     }
 
     // MARK: UITableViewDataSource
@@ -53,6 +64,9 @@ class EntityListTableViewController<T: NSManagedObject>: UITableViewController, 
         if let model = model as? WorkoutSession {
         cell.textLabel?.text = model.sessionTypes?.first?.name ?? "Workout"
         cell.detailTextLabel?.text = "\(model.date)"
+        }
+        if let model = model as? SessionType {
+            cell.textLabel?.text = model.name
         }
     }
 

@@ -10,7 +10,7 @@ import CoreData
 import UIKit
 
 final class WorkoutSessionsVC: UIViewController, CoreDataUsing {
-    let coordinator: SessionsCoordinator
+    weak var coordinator: SessionsCoordinator?
     let coreData: CoreDataService
 
     let sessionsViewController: EntityListTableViewController<WorkoutSession>
@@ -49,14 +49,14 @@ final class WorkoutSessionsVC: UIViewController, CoreDataUsing {
     func setupView() {
         sessionsViewController.attach(to: self, in: view)
         sessionsViewController.onSelected = { [weak self] workoutSession in
-            self?.coordinator.selected(workoutSession: workoutSession)
+            self?.coordinator?.selected(workoutSession: workoutSession)
         }
     }
 
     @objc
    func tapAdd(_ sender: UIBarButtonItem) {
         print("add")
-        coordinator.addWorkoutSession(from: self)
+        coordinator?.addWorkoutSession(from: self)
     }
 
     @objc

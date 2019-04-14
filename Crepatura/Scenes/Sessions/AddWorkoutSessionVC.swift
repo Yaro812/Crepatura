@@ -15,10 +15,11 @@ final class AddWorkoutSessionVC: UIViewController, CoreDataUsing {
     }
 
     let coreData: CoreDataService
-    let coordinator: SessionsCoordinator
+    weak var coordinator: SessionsCoordinator?
 
     let dateTextField = UITextField()
     let addButton = UIButton()
+    let typeButton = UIButton()
 
     required init(coordinator: SessionsCoordinator, coreData: CoreDataService) {
         self.coordinator = coordinator
@@ -46,12 +47,18 @@ final class AddWorkoutSessionVC: UIViewController, CoreDataUsing {
         addButton.addTarget(self, action: #selector(tapAddWorkout), for: .touchUpInside)
         view.addSubview(addButton)
 
+        typeButton.setTitleColor(.blue, for: .normal)
+        typeButton.setTitle("Add session type".localized, for: .normal)
+        typeButton.addTarget(self, action: #selector(tapSelectType), for: .touchUpInside)
+        view.addSubview(typeButton)
+
         setupConstraints()
     }
 
     func setupConstraints() {
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
         addButton.translatesAutoresizingMaskIntoConstraints = false
+        typeButton.translatesAutoresizingMaskIntoConstraints = false
         let guide = view.safeAreaLayoutGuide
         let constraints = [
             dateTextField.topAnchor.constraint(equalTo: guide.topAnchor),
@@ -59,7 +66,10 @@ final class AddWorkoutSessionVC: UIViewController, CoreDataUsing {
             dateTextField.widthAnchor.constraint(equalToConstant: Constant.itemWidth),
             addButton.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 50),
             addButton.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-            addButton.widthAnchor.constraint(equalToConstant: Constant.itemWidth)
+            addButton.widthAnchor.constraint(equalToConstant: Constant.itemWidth),
+            typeButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 16),
+            typeButton.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+            typeButton.widthAnchor.constraint(equalToConstant: Constant.itemWidth)
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -75,9 +85,14 @@ final class AddWorkoutSessionVC: UIViewController, CoreDataUsing {
             }
             DispatchQueue.main.async {
                 try? self.coreData.viewContext.save()
-                self.coordinator.workoutSessionAdded(sender: self)
+                self.coordinator?.workoutSessionAdded(sender: self)
             }
 
         }
+    }
+
+    @objc
+    func tapSelectType() {
+        coordinator?.listSessionTypes()
     }
 }

@@ -15,9 +15,11 @@ class EntityObserver<T: NSManagedObject>: NSObject {
     private var coreData: CoreDataService!
     private var manager: EntityObserverManager?
 
+    private var sortDescriptor: NSSortDescriptor?
+
        private lazy var fetchController: NSFetchedResultsController<T> = {
             let context = coreData.viewContext
-            let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+            let sortDescriptor = self.sortDescriptor ?? NSSortDescriptor(key: "date", ascending: false)
             let request = NSFetchRequest<T>(entityName: "\(T.self)")
             request.sortDescriptors = [sortDescriptor]
             let controller = NSFetchedResultsController(fetchRequest: request,
@@ -27,8 +29,9 @@ class EntityObserver<T: NSManagedObject>: NSObject {
             return controller
         }()
 
-    init(coreData: CoreDataService) {
+    init(coreData: CoreDataService, sortDescriptor: NSSortDescriptor? = nil) {
         self.coreData = coreData
+        self.sortDescriptor = sortDescriptor
     }
 
     func getItems() {
