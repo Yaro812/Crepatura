@@ -46,7 +46,7 @@ class CoreDataService {
         }
     }
     
-    func fetch<Item: NSManagedObject>(predicate: NSPredicate?) -> [Item] {
+    func fetch<Item: NSManagedObject>(predicate: NSPredicate? = nil) -> [Item] {
         let request = NSFetchRequest<Item>(entityName: "\(Item.self)")
         request.predicate = predicate
         do {

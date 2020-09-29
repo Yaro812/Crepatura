@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SessionsCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
@@ -35,6 +36,8 @@ class SessionsCoordinator: Coordinator {
 
     func selected(workoutSession: WorkoutSession) {
         print("Workout session selected: \(workoutSession.id)")
+        let controller = UIHostingController(rootView: EntityDetailsView(workoutSession: workoutSession))
+        navigationController.pushViewController(controller, animated: true)
     }
 
     func listSessionTypes() {

@@ -25,3 +25,4 @@ class WorkoutSession: NSManagedObject, FetchableById {
     @NSManaged func addWorkoutsObject(_ objects: Set<Workout>)
     @NSManaged func removeWorkoutsObject(_ objects: Set<Workout>)
 }
+
